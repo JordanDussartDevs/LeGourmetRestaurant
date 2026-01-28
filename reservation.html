@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Réservation — L’Atelier Noir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">L’ATELIER NOIR</div>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="menu.html">Menu</a>
+    <a href="hotel.html">Hôtel</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="page">
+  <h1>Réserver une table</h1>
+
+  <form id="reservation-form" class="reservation-form">
+    <label>
+      Nom
+      <input type="text" required>
+    </label>
+
+    <label>
+      Email
+      <input type="email" required>
+    </label>
+
+    <label>
+      Téléphone
+      <input type="tel" required>
+    </label>
+
+    <label>
+      Date
+      <input type="date" required>
+    </label>
+
+    <label>
+      Heure
+      <input type="time" required>
+    </label>
+
+    <label>
+      Nombre de personnes
+      <select required>
+        <option value="">—</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5+</option>
+      </select>
+    </label>
+
+    <button type="submit" class="btn-reserver">
+      Confirmer la réservation
+    </button>
+  </form>
+
+  <p id="confirmation" class="confirmation"></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
