@@ -1,77 +1,180 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Réservation — L’Atelier Noir</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initiale-scale=1.0">
+    <title>Réservation - Le Gourmet</title>
+    <meta name="description" content="Réservez votre table au restaurant Le Gourmet - Formulaire de réservation en ligne rapide et sécurisé">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">🍷</span>
+            <span class="logo-text">Le Gourmet</span>
+          </a>
+          <ul class="nav-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="menu.html">Notre Carte</a></li>
+            <li><a href="hotel.html">Hôtel</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="reservation.html" class="btn-reserve active">Réserver</a></li>
+          </ul>
+          <button class="mobile-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+    </header>
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="conttainer">
+        <h1 class="page-title">Réservation</h1>
+        <p class="page-subtitle">Réservez votre table en quelques clics</p>
+      </div>
+    </section>
+    <section class="reservation-section">
+      <div class="container">
+        <div class="reservation-grid">
+          <div class="reservation-form-container">
+            <h2 class="form-title">Formulaire de réservation</h2>
+            <p class="form-subtitle">Remplissez le formulaire ci-dessous pour réserver votre table</p>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="header">
-  <div class="logo">L’ATELIER NOIR</div>
-  <nav class="nav">
-    <a href="index.html">Accueil</a>
-    <a href="menu.html">Menu</a>
-    <a href="hotel.html">Hôtel</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<section class="page">
-  <h1>Réserver une table</h1>
-
-  <form id="reservation-form" class="reservation-form">
-    <label>
-      Nom
-      <input type="text" required>
-    </label>
-
-    <label>
-      Email
-      <input type="email" required>
-    </label>
-
-    <label>
-      Téléphone
-      <input type="tel" required>
-    </label>
-
-    <label>
-      Date
-      <input type="date" required>
-    </label>
-
-    <label>
-      Heure
-      <input type="time" required>
-    </label>
-
-    <label>
-      Nombre de personnes
-      <select required>
-        <option value="">—</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5+</option>
-      </select>
-    </label>
-
-    <button type="submit" class="btn-reserver">
-      Confirmer la réservation
-    </button>
-  </form>
-
-  <p id="confirmation" class="confirmation"></p>
-</section>
-
-<script src="script.js"></script>
-</body>
+            <form id="reservationForm" class="reservation-from">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">Prénom *</label>
+                  <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Nom *</label>
+                  <input type="text" id="lastName" name="lastName" required placeholder="Votre nom">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Téléphone *</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="06 12 34 56 78">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date *</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+              <div class="form-group">
+                <label for="time">Heure *</label>
+                <select id="time" name="time" required>
+                  <option value="">Sélectionnez une heures</option>
+                  <optgroup label="Déjeuner">
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                  </optgroup>
+                  <optgroup label="Dîner">
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests">Nombre de personnes *</label>
+                <select id="guests" name="guests" required>
+                  <option value="">Sélectionnez</option>
+                  <option value="1">1 personne</option>
+                  <option value="2">2 personnes</option>
+                  <option value="3">3 personnes</option>
+                  <option value="4">4 personnes</option>
+                  <option value="5">5 personnes</option>
+                  <option value="6">6 personnes</option>
+                  <option value="7">7 personnes</option>
+                  <option value="8">8 personnes</option>
+                  <option value="more">Plus de 8 personnes</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="menu">Menu souhaité</label>
+                <select id="menu" name="menu">
+                  <option value="">À la carte</option>
+                  <option value="decouverte">Menu Découverte - 68,00 €</option>
+                  <option value="gastronomique">Menu Gastronomique - 95,00 €</option>
+                  <option value="prestige">Menu Prestige - 145,00 €</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="occasion">Occasion spéciale</label>
+              <select id="occasion" name="occasion">
+                <option value="">Aucune</option>
+                <option value="anniversaire">Anniversaire</option>
+                <option value="demande">Demande en mariage</option>
+                <option value="affaire">Repas d'affaires</option>
+                <option value="famille">Repas en famille</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message ou demande spéciales</label>
+              <textarea id="message" name="message" rows="4" placeholder="Allergies, régimes alimentaires, demande particulières ..."></textarea>
+            </div>
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="newsletter" name="newsletter">
+              <label for="newsletter">Je souhaite recevoir les actualités du Gourmet</label>
+            </div>
+            <div class="form-gorup checkbox-group">
+              <input type="checkbox" id="terms" name="terms" required>
+              <label for="terms">J'accepte les conditions générales de réservation *</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Confirmer ma réservation</button>
+            <p class="form-note">* Champs obligatoire</p>
+            </form>
+          </div>
+          <div class="reservation-info">
+            <div class="info-card">
+              <h3>📞 Réservation par téléphone</h3>
+              <p>Vous préférez réserver par téléphone ?</p>
+              <a href="tel:+33123456789" class="info-links">01 23 45 67 89</a>
+              <p class="info-hours">Du mardi au samedi<br>10h00 - 18h00</p>
+            </div>
+            <div class="info-card">
+              <h3>⏰ Horraires du restaurant</h3>
+              <div class="hours-list">
+                <div class="hours-item">
+                  <strong>Déjeuner</strong>
+                  <span>12h00 - 14h00</span>
+                </div>
+                <div class="hours-item">
+                  <strong>Dîner</strong>
+                  <span>19h00 - 22h00</span>
+                </div>
+                <p class="closed-day">Fermé le lundi</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <h3>ℹ️ Informations importantes</h3>
+              <ul class="info-list">
+                <li>✓ Confirmation par email sous 24h</li>
+                <li>✓ Annulation gratuite jusqu'à 48h avant</li>
+                <li>✓ Tenue correcte exigée</li>
+                <li>✓ Carte bancaire requise pour garantir</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
